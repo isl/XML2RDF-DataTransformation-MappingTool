@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rmxml version="1.1">
+	<mus_catalogue>
+		<variant_key>
+			<_>WHOLE</_>
+			<_>Puppet [1]</_>
+			<_>Puppet [2]</_>
+		</variant_key>
+		<mus_object_name>
+			<_>Puppet</_>
+		</mus_object_name>
+		<vanda_museum_number>S.563:1,2-2001</vanda_museum_number>
+		<mus_part>
+			<_>
+				<mus_part_aspects>
+					<_>
+						<aspect_parts_assoc_idref>WHOLE</aspect_parts_assoc_idref>
+					</_>
+					<_>
+						<aspect_parts_assoc_idref>Puppet [1]</aspect_parts_assoc_idref>
+					</_>
+				</mus_part_aspects>
+				<mus_part_obj_num>
+					<mus_part_obj_num_display>S.563:2-2001</mus_part_obj_num_display>
+				</mus_part_obj_num>
+				<mus_part_name>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Puppet</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Punch and Judy puppet</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Stage property</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+				</mus_part_name>
+				<mus_part_description>Property slapstick used by Mr Punch. Carved wood. From a set of Albert Smith Punch and Judy figures. English, late 19th - early 20th century</mus_part_description>
+			</_>
+			<_>
+				<mus_part_aspects>
+					<_>
+						<aspect_parts_assoc_idref>WHOLE</aspect_parts_assoc_idref>
+					</_>
+					<_>
+						<aspect_parts_assoc_idref>Puppet [2]</aspect_parts_assoc_idref>
+					</_>
+				</mus_part_aspects>
+				<mus_part_obj_num>
+					<mus_part_obj_num_display>S.563:1-2001</mus_part_obj_num_display>
+				</mus_part_obj_num>
+				<mus_part_name>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Puppet</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Glove puppet</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+					<_>
+						<mus_part_name_field>
+							<mus_part_name_field_val>Punch and Judy puppet</mus_part_name_field_val>
+						</mus_part_name_field>
+					</_>
+				</mus_part_name>
+				<mus_part_description>Glove puppet of Mr Punch with carved and painted face, hands and legs, and hair of imitation fur. He wears a stuffed crimson corduroy hat, a crimson velvet tunic with blue velvet sleeves and blue velvet breeches. Punch and Judy figure, made by Albert Smith. English, late 19th - early 20th century</mus_part_description>
+			</_>
+		</mus_part>
+	</mus_catalogue>
+</rmxml>

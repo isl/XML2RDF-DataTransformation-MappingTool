@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This document defines a mapping from any xml to CIDOC-CRM v5.0.1. Based on Mapping Language defined in "Mapping Language for Information Integration" Technical Report 385, ICS-FORTH, December 2006-->
+<!--Institute of Computer Science, FORTH-ICS, Heraklio, Crete, Greece: Evangelia Daskalaki(eva@ics.forth.gr) , Martin Doerr(martin@ics.forth.gr)-->
+<mapping xsi:noNamespaceSchemaLocation="MappingLanguage_v1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<map>
+		<!-- RecID -->
+		<domain_map>
+			<src_domain>/root/aspect</src_domain>
+			<target_domain>E22_Man_Made_Object</target_domain>
+			<uri_rules> 
+				<uri_function>
+					<!--<name>uuid</name>-->
+					<name>uriForPhysicalObjects</name>
+					<arguments>./_/variant_key/text()</arguments>
+					<arguments>./_/variant_key/text()</arguments>
+				</uri_function>
+			</uri_rules>
+		</domain_map>
+		<link_map>
+			<range_map>
+			<!-- To src_range einai panta relative tou src_domain mesa sto xml arxeio-->
+				<src_range>//aspect_parts_part</src_range>
+				<target_range>E22_Man_Made_Object</target_range>
+				<uri_rules>
+					<uri_function>
+						<name>uriForPhysicalObjects</name>
+						<arguments>./text()</arguments>
+						<arguments>./text()</arguments>
+					</uri_function>
+				</uri_rules>
+			</range_map> 		
+			<path_map>
+				<src_path>//aspect_parts_part</src_path>
+				<target_path>
+					<int_link>P46_is_composed_of</int_link>
+				</target_path>
+			</path_map> 
+			
+		</link_map>
+		<link_map>
+			<range_map>
+				<src_range>//aspect_parts_part</src_range>
+				<target_range>E22_Man_Made_Object</target_range>
+				<uri_rules>
+					<uri_function>
+						<name>uriForPhysicalObjects</name>
+						<arguments>./text()</arguments>
+						<arguments>./text()</arguments>
+					</uri_function>
+				</uri_rules>
+			</range_map> 		
+			<path_map>
+				<src_path>//aspect_parts_part</src_path>
+				<target_path>
+					<int_link>P46_is_part_of</int_link>
+				</target_path>
+			</path_map> 
+			
+		</link_map>
+	</map>
+		<map>
+		<!-- RecID -->
+		<domain_map>
+			<src_domain>/root/aspect</src_domain>
+			<target_domain>E22_Man_Made_Object</target_domain>
+			<uri_rules> 
+				<uri_function>
+					<!--<name>uuid</name>-->
+					<name>uriForPhysicalObjects</name>
+					<arguments>./_/variant_key/text()</arguments>
+					<arguments>./_/variant_key/text()</arguments>
+				</uri_function>
+			</uri_rules>
+		</domain_map>
+
+		<link_map>
+			<range_map>
+				<src_range>//aspect_parts_part</src_range>
+				<target_range>E22_Man_Made_Object</target_range>
+				<uri_rules>
+					<uri_function>
+						<name>uriForPhysicalObjects</name>
+						<arguments>./text()</arguments>
+						<arguments>./text()</arguments>
+					</uri_function>
+				</uri_rules>
+			</range_map> 		
+			<path_map>
+				<src_path>//aspect_parts_part</src_path>
+				<target_path>
+					<int_link>P46_is_nnnn_of</int_link>
+				</target_path>
+			</path_map> 
+			
+		</link_map>
+	</map>
+
+</mapping>
+
+		

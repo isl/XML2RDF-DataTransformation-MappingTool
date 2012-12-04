@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rmxml version="1.1">
+	<mus_catalogue>
+		<variant_key>
+			<_>WHOLE</_>
+			<_>Puppet [1]</_>
+			<_>Puppet [2]</_>
+		</variant_key>
+		<mus_object_name>
+			<_>Puppet</_>
+		</mus_object_name>
+		<vanda_museum_number>S.563:1,2-2001</vanda_museum_number>
+		</mus_catalogue>
+</rmxml>

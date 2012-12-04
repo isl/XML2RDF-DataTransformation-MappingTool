@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+		
+		<root>
+			<aspect>
+				<_>
+					<variant_key>WHOLE</variant_key>
+					<aspect_parts>
+						<_>
+							<aspect_parts_part>716552</aspect_parts_part>
+							<!--<material>gold</material>-->
+						</_>
+						<_>
+							<aspect_parts_part>716541</aspect_parts_part>
+								<!--<material>silver</material>-->
+						</_>
+					</aspect_parts>
+					
+				</_>
+			
+			</aspect>
+			<aspect>
+				<_>
+					<variant_key>ggg</variant_key>
+					<aspect_parts>
+						<_>
+							<aspect_parts_part>ttt</aspect_parts_part>
+							<material>gold</material>
+						</_>
+						<_>
+							<aspect_parts_part>uuu</aspect_parts_part>
+								<!--<material>silver</material>-->
+						</_>
+					</aspect_parts>
+					
+				</_>
+			
+			</aspect>
+		</root>
+	

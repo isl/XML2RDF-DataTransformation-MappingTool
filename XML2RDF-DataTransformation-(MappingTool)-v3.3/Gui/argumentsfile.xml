@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This document defines a mapping from any xml to CIDOC-CRM v5.0.1. Based on Mapping Language defined in "Mapping Language for Information Integration" Technical Report 385, ICS-FORTH, December 2006-->
+<!--Institute of Computer Science, FORTH-ICS, Heraklio, Crete, Greece: Evangelia Daskalaki(eva@ics.forth.gr) , Martin Doerr(martin@ics.forth.gr)-->
+<mapping>
+
+	<uriForPhysicalObject>
+		<arg1>http://www.vam.ac.uk/</arg1>
+		<arg2>PhysicalObject/</arg2>
+		<arg3>xxx/</arg3>
+	</uriForPhysicalObject>
+	
+	<uriPhysicThing>
+		<arg1>http://www.vam.ac.uk/</arg1>
+		<arg2>Thing/</arg2>
+	</uriPhysicThing>
+	
+	<uriActorFromAuthority>
+		<arg1>brandpit</arg1>
+		<arg2>johnny deep</arg2>
+		<arg3>tom cruise</arg3>
+	</uriActorFromAuthority>
+	
+	<uriConceptual>
+		<arg1>http://www.vam.ac.uk/</arg1>
+		<arg2>Conceptual/</arg2>
+	</uriConceptual>
+	
+	<uriType>
+		<arg1>http://www.google.gr/</arg1>
+		<arg2>http://www.vam.ac.uk/</arg2>
+		
+	</uriType>
+	
+	<appellationURI>
+		<arg1>http://Actor Appellation</arg1>
+		<arg2>http://Place Appellation</arg2>
+		<arg3>http://Event Appeallation</arg3>
+	</appellationURI>
+	
+	<dimensionURI>
+		<arg1>dimension1</arg1>
+		<arg2>dimension2</arg2>
+		<arg3>dimension3</arg3>
+	</dimensionURI>
+	
+	<uriTimeSpan>
+		<arg1>TimeSpan1</arg1>
+		<arg2>TimeSpan2</arg2>
+		<arg3>TimeSpan3</arg3>
+	</uriTimeSpan>
+	
+	<uriEvents>
+		<arg1>evt1</arg1>
+		<arg2>evt2</arg2>
+		<arg3>evt3</arg3>
+	</uriEvents>
+	
+	<uriForPlaces>
+		<arg1>http://asda</arg1>
+		<arg2>http://place2</arg2>
+		<arg3>http://place3</arg3>
+	</uriForPlaces>
+	
+	<uriNameDate>
+		<arg1>date1</arg1>
+		<arg2>date2</arg2>
+		<arg3>date3</arg3>
+	</uriNameDate>
+	
+</mapping>
+
+	
+

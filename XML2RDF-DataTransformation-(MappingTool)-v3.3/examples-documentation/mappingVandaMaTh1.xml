@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This document defines a mapping from any xml to CIDOC-CRM v5.0.1. Based on Mapping Language defined in "Mapping Language for Information Integration" Technical Report 385, ICS-FORTH, December 2006-->
+<!--Institute of Computer Science, FORTH-ICS, Heraklio, Crete, Greece: Evangelia Daskalaki(eva@ics.forth.gr) , Martin Doerr(martin@ics.forth.gr)-->
+<mapping xsi:noNamespaceSchemaLocation="MappingLanguage_v1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<map>
+		<!-- RecID -->
+		<domain_map>
+			<src_domain>/rmxml/mus_catalogue</src_domain>
+			<target_domain>http://www.ics.forth.gr/isl/rdfs/3D-COFORM_CIDOC-CRM.rdfs#E22_Man_Made_Object</target_domain>
+			<uri_rules> 
+				<uri_function>
+					<name>uuid</name>
+					<!--<name>uriPhysThing</name>-->
+					<!--<arguments>//variant_key/_/text()</arguments>-->
+				</uri_function>
+			</uri_rules>
+		</domain_map>
+		
+		<link_map>
+			<range_map>
+			
+				<src_range>//variant_key/_</src_range>
+				<target_range>http://www.ics.forth.gr/isl/rdfs/3D-COFORM_CIDOC-CRM.rdfs#E22_Man_Made_Object</target_range>
+				<uri_rules>
+					<uri_function>
+						<name>uriPhysThing</name>
+						<arguments>text()</arguments>
+					</uri_function>
+				</uri_rules>
+			</range_map> 		
+			<path_map>
+				<src_path>//variant_key/_</src_path>
+				<target_path>
+					<int_link>http://www.ics.forth.gr/isl/rdfs/3D-COFORM_CIDOC-CRM.rdfs#P46F.is_composed_of</int_link>
+				</target_path>
+			</path_map> 
+			
+		</link_map>
+		
+		<link_map>
+			<range_map>
+				<src_range>//vanda_museum_number</src_range>
+				<target_range>Literal</target_range>
+				<uri_rules>
+					<uri_function>
+						<name>createLiteral</name>
+						<arguments>text()</arguments>
+					</uri_function>
+				</uri_rules>
+			</range_map> 		
+			<path_map>
+				<src_path>//vanda_museum_number</src_path>
+				<target_path>
+					<int_link>http://www.ics.forth.gr/isl/rdfs/3D-COFORM_CRMdig.rdfs#L4F.has_inventory_no</int_link>
+				</target_path>
+			</path_map> 	
+		</link_map>	
+		
+	</map>
+	
+</mapping>
+
+		

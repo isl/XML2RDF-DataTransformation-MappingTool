@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Christos Georgis (Information Systems Laboratory) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>This XML Schema is based on Mapping Language defined in "Mapping Language for Information Integration" Technical Report 385, ICS-FORTH, December 2006</xs:documentation>
+		<xs:documentation>Institute of Computer Science, FORTH-ICS, Heraklio, Crete, Greece: Maria Koutraki(kutraki@ics.forth.gr) , Martin Doerr(martin@ics.forth.gr)</xs:documentation>
+		<xs:documentation>Last Update: 05-08-2010</xs:documentation>
+		<xs:documentation>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+				<img alt="Άδεια Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"/>
+			</a>
+			<br/>Το <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">Mapping Language for Information Integration</span> από τον <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.cidoc-crm.org/xsd/MappingLanguage_V1.0.xsd " property="cc:attributionName" rel="cc:attributionURL">Institute of Computer Science, FORTH-ICS, http://www.ics.forth.gr</a> This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Greece License </a>.
+			</xs:documentation>
+	</xs:annotation>
+	<xs:element name="mapping">
+		<!--Holds the mapping definition from mapping-scheme-1 to mapping-schema-2 e.g. Lido to CIDOC-CRM.-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="map" maxOccurs="unbounded">
+					<!--One map element for each domain_map. -->
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="domain_map"/>
+							<xs:element ref="link_map" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="domain_map">
+		<!--Maps "src_domain" of  mapping-scheme-1 to "target_domain" of  mapping-schema-2. e.g. src_domain: lido element. target_domain: CIDOC class.-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="src_domain_condition" type="conditions" minOccurs="0"/>
+				<xs:element name="src_domain" type="xs:string"/>
+				<!-- from mapping-scheme-1  e.g. Lido element.-->
+				<xs:element name="target_domain" type="xs:string"/>
+				<!--to  mapping-schema-2 e.g. CODOC class.-->
+				<xs:element ref="uri_rules"/>
+				<xs:element ref="add_link" minOccurs="0"/>
+				<xs:element ref="add_entity" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="link_map">
+		<!--Holds "range_map" and "path_map".-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="range_map"/>
+				<xs:element ref="path_map"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="range_map">
+		<!--Maps source range to target range.-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="src_range_condition" type="conditions" minOccurs="0"/>
+				<xs:element name="src_range" type="xs:string">
+					<!-- example Lido element. eg."lido:lidoRecID".-->
+				</xs:element>
+				<xs:element name="target_range" type="xs:string">
+					<!-- example CIDOC class. eg. "E31_Document".-->
+				</xs:element>
+				<xs:element ref="uri_rules"/>
+				<xs:element ref="add_link" minOccurs="0"/>
+				<xs:element ref="add_entity" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="path_map">
+		<!--Maps source path to target path.-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="src_path" type="xs:string"/>
+				<!-- example  Lido element. eg. "lidoRecID"-->
+				<xs:element name="target_path">
+					<!--The whole path that needs to be mapped to the "src_path".
+										e.g In some cases target_path is a CIDOC property. In other cases is a CIDOC property a CIDOC class and another CIDOC property.-->
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="target_path_condition" type="conditions" minOccurs="0"/>
+							<xs:element ref="int_link"/>
+							<xs:element name="int_entity" type="xs:string" minOccurs="0"/>
+							<!--e.g. CIDOC class.Intermediate node.-->
+							<xs:element ref="uri_rules" minOccurs="0"/>
+							<xs:element ref="add_link" minOccurs="0"/>
+							<xs:element ref="add_entity" minOccurs="0"/>
+							<xs:element ref="int_link" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="uri_rules">
+		<xs:annotation>
+			<xs:documentation/>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0">
+				<xs:element name="uri_function" minOccurs="0">
+					<!--Name and arguments for uri function.-->
+					<xs:complexType>
+						<xs:sequence minOccurs="0">
+							<xs:element name="name" type="xs:string" minOccurs="0"/>
+							<!--Uri function name.-->
+							<xs:element name="arguments" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+							<!--Uri function arguments. In Xpath form e.g. from lido xml file.-->
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="conditions">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="if" minOccurs="0"/>
+			<xs:element ref="if_not" minOccurs="0"/>
+			<xs:element ref="if_exist" minOccurs="0"/>
+			<xs:element ref="if_not_exist" minOccurs="0"/>
+			<xs:element ref="if_hasbroader" minOccurs="0"/>
+			<xs:element ref="if_not_hasbroader" minOccurs="0"/>
+			<xs:element name="AND" minOccurs="0" maxOccurs="unbounded">
+				<!--"And" condition.-->
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="condition1" type="conditions"/>
+						<xs:element name="condition2" type="conditions"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="OR" minOccurs="0" maxOccurs="unbounded">
+				<!--"Or" condition.-->
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="condition1" type="conditions"/>
+						<xs:element name="condition2" type="conditions"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="if" type="pathValue"/>
+	<!--"if" condition.-->
+	<xs:element name="if_not" type="pathValue"/>
+	<!--"if not" condition.-->
+	<xs:element name="if_exist" type="path"/>
+	<!--"if exist" condition.-->
+	<xs:element name="if_not_exist" type="path"/>
+	<!--"if not exist" condition.-->
+	<xs:element name="if_hasbroader" type="pathValue"/>
+	<!--"if hasbroader" condition.-->
+	<xs:element name="if_not_hasbroader" type="pathValue"/>
+	<!--"if not hasbroader" condition.-->
+	<xs:complexType name="pathValue">
+		<xs:sequence minOccurs="0">
+			<xs:element name="path" type="xs:string" minOccurs="0"/>
+			<!--Specific path in Lido xml file.-->
+			<xs:element name="has_value" type="xs:string" minOccurs="0"/>
+			<!--Specific value to the "path" should have in the "if" case or should not have in the "if_not" case.-->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="path">
+		<xs:sequence minOccurs="0">
+			<xs:element name="path" type="xs:string" minOccurs="0"/>
+			<!--Specific Xpath e.g. xpath in Lido xml file.-->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="add_link" type="xs:string">
+	</xs:element>
+	<xs:element name="add_entity">
+		<!--Additional entity -->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="value">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="value_binding" type="xs:string"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="uri_rules"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="int_link" type="xs:string"/>
+	<!--CIDOC property.-->
+</xs:schema>
